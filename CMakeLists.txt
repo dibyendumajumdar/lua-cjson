@@ -53,7 +53,7 @@ if(MSVC)
     add_definitions(-Dstrncasecmp=_strnicmp)
 endif()
 
-add_library(cjson MODULE lua_cjson.c strbuf.c ${FPCONV_SOURCES})
+add_library(cjson SHARED lua_cjson.c strbuf.c ${FPCONV_SOURCES})
 set_target_properties(cjson PROPERTIES PREFIX "")
 target_link_libraries(cjson ${LUALIB})
 install(TARGETS cjson   
